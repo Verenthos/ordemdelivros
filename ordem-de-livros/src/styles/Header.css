@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  .logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .navigation ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navigation li {
+    margin-left: 20px;
+  }
+  
+  .navigation a {
+    color: #666;
+    text-decoration: none;
+  }
