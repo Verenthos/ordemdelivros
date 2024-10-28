@@ -1,35 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import api from '../services/api';
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import '../styles/AuthorPage.css';
+import authors from './AuthorsData.js';
 
 const AuthorPage = () => {
-  const [books, setBooks] = useState([]);
-  const { id } = useParams();
+  const { nome } = useParams();
 
-  useEffect(() => {
-    const fetchBooks = async () => {
-      try {
-        const response = await api.get(`/authors/${id}/books`);
-        setBooks(response.data);
-      } catch (error) {
-        console.error('Erro ao buscar os livros:', error);
-      }
-    };
+  const author = authors[nome];
 
-    fetchBooks();
-  }, [id]);
-
+  if (!author) {
+    return <div className="author-not-found">Autor não encontrado.</div>;
+  }
   return (
-    <div>
-      <h2>Livros do Autor</h2>
-      <ul className="book-list">
-        {books.map((book) => (
-          <li key={book.id} className="book-item">
-            <a href={`https://www.amazon.com/dp/${book.asin}/?tag=your-affiliate-id`} target="_blank" rel="noopener noreferrer" className="book-title">{book.title}</a>
-            <span className="book-year">{book.publicationYear}</span>
+    <div className="author-page">
+      <h1>{author.name}</h1>
+      <p>{author.bio}</p>
+      <h2>Livros:</h2>
+      <ul>
+        {author.books.map((book, index) => (
+          <li key={index}>
+            <a href={book.link} target="_blank" rel="noopener noreferrer">
+              {book.title} ({book.year})
+            </a>
           </li>
         ))}
       </ul>
+      <Link to="/" style={{ color: 'yellow' }}>Voltar para a página inicial</Link>
     </div>
   );
 };

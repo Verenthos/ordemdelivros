@@ -1,0 +1,29 @@
+.authors-list-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #ffff;
+  }
+  
+  .authors-list-page h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .authors-list-page ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .authors-list-page li {
+    margin-bottom: 10px;
+  }
+  
+  .authors-list-page a {
+    text-decoration: none;
+    color: #00ff8096;
+  }
+  
+  .authors-list-page a:hover {
+    text-decoration: underline;
+  }

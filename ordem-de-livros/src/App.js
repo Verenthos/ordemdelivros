@@ -8,6 +8,7 @@ import AuthorPage from './pages/AuthorPage';
 import BookPage from './pages/BookPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import AuthorsListPage from './pages/AuthorsListPage';
 
 function App() {
   return (
@@ -18,8 +19,9 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/busca" element={<SearchResultsPage />} />
           <Route path="/series/:id" element={<SeriesPage />} />
-          <Route path="/autores/:id" element={<AuthorPage />} />
+          <Route path="/autor/:nome" element={<AuthorPage />} />
           <Route path="/livros/:id" element={<BookPage />} />
+          <Route path="/autores" element={<AuthorsListPage />} />
         </Routes>
         <Footer />
       </div>
