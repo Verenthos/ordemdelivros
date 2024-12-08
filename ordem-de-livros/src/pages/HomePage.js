@@ -11,11 +11,13 @@ const HomePage = () => {
       </div>
       <div className="content">
         <h1>Bem-vindo à Ordem de Livros</h1>
-        <p>Descubra a ordem perfeita para ler suas séries favoritas!</p>
+        <p>Confira a ordem da lançamento dos seus livros favoritos!</p>
         <SearchBar />
       </div>
     </div>
   );
 };
+//
+
 
 export default HomePage;

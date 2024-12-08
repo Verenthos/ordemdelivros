@@ -1,0 +1,41 @@
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import '../styles/SearchResultsPage.css';
+import AuthorList from '../components/AuthorList';
+import { authors } from '../pages/AuthorsListPage';
+
+const SearchResultsPage = () => {
+  const [filteredAuthors, setFilteredAuthors] = useState([]);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const searchParams = new URLSearchParams(location.search);
+  const searchTerm = searchParams.get('termo');
+
+  useEffect(() => {
+    const searchAuthors = () => {
+      const filtered = authors.filter((author) =>
+        author.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredAuthors(filtered);
+    };
+
+    searchAuthors();
+  }, [searchTerm]);
+
+  const handleAuthorClick = (author) => {
+    navigate(author.link);
+  };
+
+  return (
+    <div className="search-results-page">
+      <h2>Resultados da busca para: {searchTerm}</h2>
+      {filteredAuthors.length > 0 ? (
+        <AuthorList authors={filteredAuthors} onAuthorClick={handleAuthorClick} />
+      ) : (
+        <p>Nenhum autor encontrado.</p>
+      )}
+    </div>
+  );
+};
+
+export default SearchResultsPage;
