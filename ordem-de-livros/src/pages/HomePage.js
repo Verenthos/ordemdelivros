@@ -12,7 +12,6 @@ const HomePage = () => {
       <div className="content">
         <h1>Bem-vindo à Ordem de Livros</h1>
         <p>Confira a ordem da lançamento dos seus livros favoritos!</p>
-        <SearchBar />
       </div>
     </div>
   );

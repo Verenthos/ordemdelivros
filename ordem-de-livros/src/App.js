@@ -10,9 +10,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import AuthorsListPage from './pages/AuthorsListPage';
 import AboutPage from './pages/AboutPage';
-import AuthorData from './components/AuthorData';
+import {AuthorsData} from './pages/AuthorsData.js';
 
 function App() {
+  console.log(AuthorsData);
   return (
     <Router>
       <div className="app">

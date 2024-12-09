@@ -1,4 +1,4 @@
-const AuthorsData = {
+export const AuthorsData = {
   'tolkien': {
     name: 'J.R.R. Tolkien',
     bio: 'John Ronald Reuel Tolkien (1892-1973) foi um escritor, professor universitário e filólogo britânico, mais conhecido por ser o autor das obras "O Hobbit" e "O Senhor dos Anéis".',
